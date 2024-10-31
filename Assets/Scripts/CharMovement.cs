@@ -17,11 +17,16 @@ public class CharMovement : MonoBehaviour
 
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        // movement
+
+        // forward movement
+        rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, forwardSpeed);
+
+
+        //side movement
         float horizontalInput = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector3(horizontalInput * sideSpeed, rb.velocity.y, forwardSpeed); 
+        rb.velocity = new Vector3(horizontalInput * sideSpeed, rb.velocity.y, rb.velocity.z); 
 
 
 
