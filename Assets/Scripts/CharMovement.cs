@@ -38,7 +38,7 @@ public class CharMovement : MonoBehaviour
         rb.position = new Vector3(targetX, rb.position.y, rb.position.z);
 
 
-        // rb.velocity = new Vector3(horizontalInput * sideSpeed, rb.velocity.y, rb.velocity.z); 
+       
 
 
 
