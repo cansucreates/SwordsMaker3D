@@ -4,31 +4,53 @@ using UnityEngine;
 
 public class Bucket : MonoBehaviour
 {
-    /* public MeshRenderer lavaRenderer;
 
+    public GameObject steel;
 
     private bool isFilled = false;
 
-    //for filling the bucket
-    public void FillWithLava()
+    private void Start()
     {
-        if (!isFilled)
+        if (steel != null)
         {
-            isFilled = true;
-            if (lavaRenderer != null)
-            {
-                lavaRenderer.enabled = true;
-                Debug.Log($"Filling bucket: Lava renderer set to true for {gameObject.name}");
-            }
-            else
-            {
-                Debug.LogError($"Lava renderer not assigned for {gameObject.name}");
-            }
+            steel.SetActive(false);
         }
         else
         {
-            Debug.Log($"Bucket {gameObject.name} is already filled.");
+            Debug.LogError($"Steel object not assigned for bucket: {gameObject.name}");
         }
-    } */
+    }
 
+    public void FillWithLava()
+    {
+        if (!isFilled && steel != null)
+        {
+            isFilled = true;
+            Debug.Log("Activating steel for: " + gameObject.name);
+            steel.SetActive(true);
+
+            // Explicitly enable the MeshRenderer
+            MeshRenderer renderer = steel.GetComponent<MeshRenderer>();
+            if (renderer != null)
+            {
+                renderer.enabled = true;
+                Debug.Log($"MeshRenderer on {steel.name} explicitly enabled.");
+            }
+            else
+            {
+                Debug.LogError($"MeshRenderer missing on steel: {steel.name}");
+            }
+        }
+    }
+
+
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("MeltedSteel"))
+        {
+            FillWithLava();
+        }
+    }
 }

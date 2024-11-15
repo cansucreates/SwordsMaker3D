@@ -515,7 +515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69cb9bf793d49b147bba19d883d7a7bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lavaRenderer: {fileID: 1557341547958955687}
+  steel: {fileID: 8763991564893811057}
 --- !u!1 &8763991564893811057
 GameObject:
   m_ObjectHideFlags: 0

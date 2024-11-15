@@ -18,7 +18,7 @@ public class BucketPickup : MonoBehaviour
             pickedUpBuckets.Add(other.gameObject);
 
             // Disable collider and make kinematic
-            other.GetComponent<Collider>().enabled = false;
+           // other.GetComponent<Collider>().enabled = false;
             other.GetComponent<Rigidbody>().isKinematic = true;
 
             // Parent to the "PickedBuckets" holder
