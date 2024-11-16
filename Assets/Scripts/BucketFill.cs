@@ -7,9 +7,11 @@ public class BucketFill : MonoBehaviour
 
     public GameObject steel;
     public GameObject water;
+    public GameObject forgedSteel;
 
     private bool isSteelFilled = false;
     private bool isWaterFilled = false;
+    private bool isForged = false;
 
     private void Start()
     {
@@ -30,6 +32,17 @@ public class BucketFill : MonoBehaviour
         {
             Debug.LogError($"Water object not assigned for bucket: {gameObject.name}");
         }
+
+        if ( forgedSteel != null)
+        {
+            forgedSteel.SetActive(false);
+        }
+        else
+        {
+            Debug.LogError($"Forged steel object not assigned for bucket: {gameObject.name} ");
+        }
+
+
     }
 
     public void FillWithLava()
@@ -85,6 +98,31 @@ public class BucketFill : MonoBehaviour
         }
 
     }
+
+    public void ForgeComplete()
+    {
+        if(isSteelFilled && isWaterFilled && !isForged)
+        {
+            isForged = true;
+            Debug.Log("Forging complete for: " + gameObject.name);
+            forgedSteel.SetActive(true);
+
+            // Disabling water mashrenderer
+            MeshRenderer waterRenderer = water.GetComponent<MeshRenderer>();
+            if(waterRenderer != null)
+            {
+                waterRenderer.enabled = false;
+            }
+
+            MeshRenderer forgedSteelRenderer = forgedSteel.GetComponent<MeshRenderer>();
+            if (forgedSteelRenderer != null)
+            {
+                forgedSteelRenderer.enabled = true;
+            }
+        }
+    }
+
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("MeltedSteel"))
@@ -94,6 +132,10 @@ public class BucketFill : MonoBehaviour
         else if (other.CompareTag("Water"))
         {
             FillWithWater();
+        }
+        else if (other.CompareTag("ForgeSteel"))
+        {
+            ForgeComplete();
         }
     }
 }

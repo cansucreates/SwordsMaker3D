@@ -356,6 +356,7 @@
 "Assets/Scripts/BucketPickup.cs"
 "Assets/Scripts/CameraFollow.cs"
 "Assets/Scripts/CharMovement.cs"
+"Assets/Scripts/ForgerMachineMovement.cs"
 "Assets/Scripts/MoveLava.cs"
 "Assets/Scripts/RunningWater.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"
