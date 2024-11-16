@@ -6,6 +6,7 @@ TagManager:
   tags:
   - bucket
   - MeltedSteel
+  - Water
   layers:
   - Default
   - TransparentFX
