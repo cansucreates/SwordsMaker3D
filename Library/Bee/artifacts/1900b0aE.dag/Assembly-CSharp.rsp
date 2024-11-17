@@ -358,6 +358,7 @@
 "Assets/Scripts/CharMovement.cs"
 "Assets/Scripts/ForgerMachineMovement.cs"
 "Assets/Scripts/MoveLava.cs"
+"Assets/Scripts/RotateWheel.cs"
 "Assets/Scripts/RunningWater.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01_UGUI.cs"

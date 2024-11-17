@@ -614,8 +614,9 @@ GameObject:
   - component: {fileID: 1021477848858101199}
   - component: {fileID: 4986819412144175781}
   - component: {fileID: 7317978739106250727}
+  - component: {fileID: 7228745399992211455}
   m_Layer: 0
-  m_Name: Cylinder (3)
+  m_Name: teker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -709,6 +710,19 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &7228745399992211455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6416189278298976897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93793cdc44e03d54ba026abb1b26c9a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 10
 --- !u!1 &7968454995144623685
 GameObject:
   m_ObjectHideFlags: 0
