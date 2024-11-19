@@ -593,6 +593,7 @@ GameObject:
   - component: {fileID: 4226993911979900778}
   - component: {fileID: 7641771122813880446}
   - component: {fileID: 2844383525950989854}
+  - component: {fileID: 8259981856250243668}
   m_Layer: 6
   m_Name: Bucket
   m_TagString: bucket
@@ -686,6 +687,22 @@ MonoBehaviour:
   steel: {fileID: 8763991564893811057}
   water: {fileID: 417550313359094463}
   forgedSteel: {fileID: 1912305474654340105}
+  isForged: 0
+--- !u!114 &8259981856250243668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7841291584086971498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18853d6f672d2e458582575d0c117c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swordPartPrefab: {fileID: 6226917750271050030, guid: d0cb59d20b346b144865bdb404bc6a21, type: 3}
+  attachmentPoint: {fileID: 0}
+  partSpacing: 0.2
 --- !u!1 &8763991564893811057
 GameObject:
   m_ObjectHideFlags: 0

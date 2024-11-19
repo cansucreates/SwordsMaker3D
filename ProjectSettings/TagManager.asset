@@ -8,6 +8,7 @@ TagManager:
   - MeltedSteel
   - Water
   - ForgeSteel
+  - SharpeningWheel
   layers:
   - Default
   - TransparentFX

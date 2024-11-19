@@ -11,7 +11,7 @@ public class BucketFill : MonoBehaviour
 
     private bool isSteelFilled = false;
     private bool isWaterFilled = false;
-    private bool isForged = false;
+    public bool isForged = false;
 
     private void Start()
     {
