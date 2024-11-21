@@ -21,7 +21,6 @@ public class ForgerMachineMovement : MonoBehaviour
     {
         if(upperPart == null)
         {
-            Debug.LogError("Upper part is not assigned in the forge machine");
             return;
         }
 
@@ -41,28 +40,26 @@ public class ForgerMachineMovement : MonoBehaviour
     {
         GameObject target = other.gameObject;
 
-        // Check if the object or its parent is a bucket
         while (target != null)
         {
-            if (target.CompareTag(bucketTag)) // Detect the bucket tag
+            if (target.CompareTag(bucketTag))
             {
                 Debug.Log($"Bucket detected: {target.name}");
-                StartMoving(); // Trigger the forge machine
+                StartMoving(); // forgerý tetikle
                 return;
             }
 
-            // Move up the hierarchy to check parents
+            //hiyerarþide parent checkle
             target = target.transform.parent != null ? target.transform.parent.gameObject : null;
         }
 
-        Debug.Log($"Non-bucket object detected: {other.name}");
     }
 
     private void StartMoving()
     {
         isMoving = true;
         movingDown = true;
-        targetPosition = initialPosition - new Vector3(0, moveDistance, 0); // down
+        targetPosition = initialPosition - new Vector3(0, moveDistance, 0); // aþaðý
     }
 
     private void MoveUpperPart()
@@ -73,15 +70,14 @@ public class ForgerMachineMovement : MonoBehaviour
         {
             if (movingDown)
             {
-                // if moving down switch to moving up
+                // eðer aþaðýysa yukarý switchle
                 movingDown = false;
                 targetPosition = initialPosition;
             }
             else
             {
-                // if moving up, stop the movement
+                // eðer yukarý hareket ediyosa durdur
                 isMoving = false;
-                Debug.Log("Part movement completed");
             }
         }
 

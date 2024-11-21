@@ -1732,6 +1732,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1021112407446704377}
+  - component: {fileID: 8755434267016042720}
   m_Layer: 0
   m_Name: SpeedChart
   m_TagString: Untagged
@@ -1766,6 +1767,19 @@ Transform:
   - {fileID: 4947291641626510444}
   m_Father: {fileID: 4526504063209394848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8755434267016042720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6481919656807555461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2096fcc512641764295c3edf99a31a0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swordManager: {fileID: 0}
 --- !u!1 &6606761515515892674
 GameObject:
   m_ObjectHideFlags: 0

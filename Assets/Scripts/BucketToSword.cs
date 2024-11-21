@@ -1,60 +1,58 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BucketToSword : MonoBehaviour
 {
-    public GameObject swordPartPrefab; // Prefab for the sword part
-    public Transform attachmentPoint; // Point where parts attach
-    public float partSpacing = 0.5f;  // Distance between parts
+    public GameObject swordPartPrefab;  
+    public Transform attachmentPoint;  // sword partlarýn attachlenceði nokta
+    public float partSpacing = 0.5f;   // partlar arasý mesafe
     public float delayBeforeAddingPart = 0.1f;
+
+    public SwordManager swordManager;
 
     public void CheckAndConvertBucket()
     {
-        // Ensure the bucket has the BucketFill component
+        
         BucketFill bucketFill = GetComponent<BucketFill>();
         if (bucketFill == null)
         {
-            Debug.LogError($"BucketFill component is missing on {gameObject.name}");
             return;
         }
 
-        // Check if the bucket is forged
+        // eðer bucket forgelandýysa
         if (bucketFill.isForged)
         {
             StartCoroutine(AddSwordPartWithDelay());
-
         }
         else
         {
-            Debug.Log($"Bucket {gameObject.name} was not forged. No sword part added.");
             Destroy(gameObject);
         }
-
-
     }
-
 
     private IEnumerator AddSwordPartWithDelay()
     {
         yield return new WaitForSeconds(delayBeforeAddingPart);
+
+        // attachment noktasýna yeni sword part ekleme
         GameObject newSwordPart = Instantiate(
-               swordPartPrefab,
-               attachmentPoint.position,
-               attachmentPoint.rotation,
-               attachmentPoint // Parent to the attachment point
-         );
+            swordPartPrefab,
+            attachmentPoint.position,
+            attachmentPoint.rotation
+        );
 
-        // Re-parent the new sword part to the sword handle
-        newSwordPart.transform.SetParent(attachmentPoint.parent, true);
+        // sword handle'ý parentla
+        newSwordPart.transform.SetParent(attachmentPoint.parent);
 
-        // Move the attachment point forward for the next part
-        attachmentPoint.position += attachmentPoint.forward * partSpacing;
+        // attachment pointin local positionýný diðer part için deðiþtirme
+        attachmentPoint.localPosition += Vector3.forward * partSpacing;
 
+        // sword managera bildirme
+        if (swordManager != null)
+        {
+            swordManager.RegisterSwordPart(newSwordPart);
+        }
 
         Destroy(gameObject);
     }
-
-
-
 }

@@ -9,6 +9,8 @@ TagManager:
   - Water
   - ForgeSteel
   - SharpeningWheel
+  - SpeedCollider
+  - DamageCollider
   layers:
   - Default
   - TransparentFX
@@ -16,10 +18,10 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Sharpener
+  - SwordPart
+  - SpeedChart
+  - DamageChart
   - 
   - 
   - 

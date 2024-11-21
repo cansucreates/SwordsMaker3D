@@ -8,7 +8,7 @@ public class CharMovement : MonoBehaviour
     public float forwardSpeed = 5f;
     public float sideSpeed = 10f;
 
-    // platform boundaries
+    // platform sýnýrlarý
     public float leftBound = -5f;
     public float rightBound = 5f;
 
@@ -24,15 +24,15 @@ public class CharMovement : MonoBehaviour
     void FixedUpdate()
     {
 
-        // forward movement
+        // ileri move
         rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, forwardSpeed);
 
 
-        //side movement
+        //yan move
         float horizontalInput = Input.GetAxis("Horizontal");
         float targetX = rb.position.x + horizontalInput * sideSpeed * Time.fixedDeltaTime;
 
-        // clamp X to the boundaries
+        // kenarlardan sýnýr
         targetX = Mathf.Clamp(targetX, leftBound, rightBound);
 
         rb.position = new Vector3(targetX, rb.position.y, rb.position.z);

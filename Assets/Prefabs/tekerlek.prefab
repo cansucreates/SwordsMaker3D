@@ -616,7 +616,7 @@ GameObject:
   - component: {fileID: 7228745399992211455}
   - component: {fileID: 2139455227409870419}
   - component: {fileID: 453077456222565967}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: teker
   m_TagString: SharpeningWheel
   m_Icon: {fileID: 0}
